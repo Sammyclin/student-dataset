@@ -1,0 +1,48 @@
+"""
+CUL-CYB 371 – Data Mining and Data Warehousing
+Assignment Two: Fictional Student Dataset
+
+Run with: python create_dataset.py
+This script creates student_dataset.csv in the same folder.
+"""
+
+import csv
+
+students = [
+    ["STU001", "Computer Science", 300, 92, 84],
+    ["STU002", "Accounting", 200, 85, 76],
+    ["STU003", "Mass Communication", 100, 78, 69],
+    ["STU004", "Cyber Security", 300, 96, 91],
+    ["STU005", "Business Administration", 200, 88, 73],
+    ["STU006", "Computer Science", 100, 81, 79],
+    ["STU007", "Economics", 400, 90, 82],
+    ["STU008", "Cyber Security", 200, 74, 68],
+    ["STU009", "Accounting", 300, 93, 88],
+    ["STU010", "Mass Communication", 400, 86, 75],
+    ["STU011", "Computer Science", 200, 89, 81],
+    ["STU012", "Business Administration", 100, 77, 64],
+    ["STU013", "Economics", 300, 95, 90],
+    ["STU014", "Cyber Security", 400, 84, 78],
+    ["STU015", "Accounting", 100, 80, 72],
+    ["STU016", "Mass Communication", 200, 91, 86],
+    ["STU017", "Computer Science", 400, 87, 83],
+    ["STU018", "Business Administration", 300, 82, 74],
+    ["STU019", "Economics", 100, 76, 67],
+    ["STU020", "Cyber Security", 100, 98, 94],
+]
+
+columns = [
+    "Student ID",
+    "Department",
+    "Level",
+    "Attendance Percentage",
+    "Average Examination Score",
+]
+
+with open("student_dataset.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(columns)
+    writer.writerows(students)
+
+print(f"Dataset created successfully with {len(students)} fictional student records.")
+print("Saved as: student_dataset.csv")
